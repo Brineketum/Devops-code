@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="imgs">
+            <img class="tcb" src="img/tcb.png" alt="">
+            <img class="devops" src="img/devops.png" alt="">
+        </div>
+
+        <div class="texts">
+                 <h1 data-text="Hello BRINE KETUM...">Hello BRINE KETUM...</h1>
+            
+            <h2  id="text"> </h2>
+        </div>
+        <div class="rocket">
+            <img src="img/rocket.png" alt="rocket.png">
+        </div>
+
+
+    </div>
+
+    <script>
+        document.addEventListener("mousemove", function (e) {
+            var rocket = document.querySelector('.rocket');
+            rocket.style.left = e.offsetX + 'px';
+            rocket.style.top = e.offsetY + 'px';
+        })
+
+        function starts() {
+            let count = 50;
+            let main = document.querySelector('.texts');
+            let i = 0;
+            while (i < count) {
+                let star = document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerWidth);
+                let duration = Math.random() * 1;
+                let h = Math.random() * 100;
+                star.style.left = x + 'px';
+                star.style.width = 1 + 'px';
+                star.style.height = h + 'px';
+                star.style.animationDuration = duration + 's';
+                main.appendChild(star);
+                i++;
+            }
+        }
+        starts();
+    </script>
+
+    <script type="text/javascript">
+        var i = 0,
+            text;
+        text = "Welcome to a New DevOps Challenge!";
+
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 80);
+            }
+        }
+
+        typing();
+    </script>
+
+</body>
+
+</html>
